@@ -25,7 +25,7 @@ export const projects = [
       "A responsive website for a hospitality business, so guests can see rooms, amenities and contact details quickly on any device.",
     stack: ["HTML", "CSS", "JavaScript"],
     status: "live",
-    live: "", // TODO: live site link
+    live: "https://goshen-foods.vercel.app",
     code: "", // TODO: GitHub repo link
   },
   {
