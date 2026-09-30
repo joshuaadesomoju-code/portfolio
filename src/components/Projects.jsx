@@ -9,15 +9,10 @@ function ProjectLinks({ project }) {
     );
   }
   return (
-    <div className="flex gap-5 text-sm font-semibold">
+    <div className="flex gap-5 whitespace-nowrap text-sm font-semibold">
       {project.live && (
         <a href={project.live} target="_blank" rel="noreferrer" className="text-indigo-deep underline decoration-ochre decoration-2 underline-offset-4 hover:decoration-indigo-deep">
           Visit site
-        </a>
-      )}
-      {project.code && (
-        <a href={project.code} target="_blank" rel="noreferrer" className="text-indigo-deep underline decoration-ochre decoration-2 underline-offset-4 hover:decoration-indigo-deep">
-          View code
         </a>
       )}
     </div>
