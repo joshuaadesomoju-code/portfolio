@@ -19,14 +19,13 @@ export const profile = {
 // status: "live" shows the links, "building" shows an in-progress tag.
 export const projects = [
   {
-    title: "Goshen Suites & Apartments",
-    type: "Business website",
+    title: "GoshenFoods",
+    type: "Food ordering web app",
     summary:
-      "A responsive website for a hospitality business, so guests can see rooms, amenities and contact details quickly on any device.",
-    stack: ["HTML", "CSS", "JavaScript"],
+      "An online ordering site for a Nigerian restaurant, where customers browse the menu, fill a cart, pay and track their orders, with dashboards for staff to manage orders.",
+    stack: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
     status: "live",
     live: "https://goshen-foods.vercel.app",
-    code: "", // TODO: GitHub repo link
   },
   {
     title: "Admin Dashboard",
