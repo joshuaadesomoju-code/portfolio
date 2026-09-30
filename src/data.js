@@ -12,7 +12,7 @@ export const profile = {
   location: "Ota, Ogun State, Nigeria · works remotely (GMT+1)",
   email: "joshuaadesomoju@gmail.com",
   upwork: "https://www.upwork.com/", // TODO: your Upwork profile link
-  github: "https://github.com/", // TODO: your GitHub link
+  github: "https://github.com/joshuaadesomoju-code",
   linkedin: "https://linkedin.com/in/joshua-adesomoju-0424b43a3",
 };
 
