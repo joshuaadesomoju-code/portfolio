@@ -14,6 +14,9 @@ export default function Contact() {
           <a href={`mailto:${profile.email}`} className="rounded-full border-2 border-wash px-6 py-3 font-semibold hover:bg-wash hover:text-indigo-deep">
             {profile.email}
           </a>
+          <a href={profile.cv} download className="rounded-full border-2 border-wash/40 px-6 py-3 font-semibold hover:border-wash">
+            Download CV
+          </a>
         </div>
         <div className="mt-16 flex flex-wrap justify-between gap-4 border-t border-indigo-mid pt-6 text-sm text-wash/70">
           <p>{profile.location}</p>

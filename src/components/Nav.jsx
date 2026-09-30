@@ -10,6 +10,7 @@ export default function Nav() {
         <a href="#work" className="hidden hover:text-indigo-deep sm:inline">Work</a>
         <a href="#services" className="hidden hover:text-indigo-deep sm:inline">Services</a>
         <a href="#about" className="hidden hover:text-indigo-deep sm:inline">About</a>
+        <a href="#experience" className="hidden hover:text-indigo-deep md:inline">Experience</a>
         <a
           href={profile.upwork}
           target="_blank"

@@ -1,4 +1,4 @@
-import { profile, skills } from "../data";
+import { profile, skills, certifications } from "../data";
 
 export default function About() {
   return (
@@ -18,6 +18,15 @@ export default function About() {
           <p className="pt-2 text-base text-indigo-mid">
             <span className="font-semibold text-indigo-deep">Tools I use: </span>
             {skills.join(", ")}
+          </p>
+          <p className="text-base text-indigo-mid">
+            <span className="font-semibold text-indigo-deep">Certified: </span>
+            {certifications.map((c) => `${c.name} (${c.issuer}, ${c.date.split(" ")[1]})`).join("; ")}
+          </p>
+          <p className="pt-2">
+            <a href={profile.cv} download className="inline-block rounded-full border-2 border-indigo-deep px-5 py-2.5 text-base font-semibold text-indigo-deep hover:bg-indigo-deep hover:text-wash">
+              Download my CV (PDF)
+            </a>
           </p>
         </div>
       </div>
