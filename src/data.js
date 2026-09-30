@@ -41,7 +41,7 @@ export const projects = [
     title: "Palmwine & Pepper",
     type: "Restaurant website",
     summary:
-      "A landing site for a fictional Lagos grill with a tabbed menu, illustrated gallery and a table booking form that knows the opening hours.",
+      "A landing site for a fictional Lagos grill with a tabbed menu, a photo gallery, scroll animations and a table booking form that knows the opening hours.",
     stack: ["React", "Tailwind CSS"],
     status: "live",
     live: "https://palmwine-and-pepper.vercel.app",
