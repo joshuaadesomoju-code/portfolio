@@ -4,8 +4,8 @@ export default function About() {
   return (
     <section id="about" className="bg-cloth">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 md:grid-cols-[1fr_2fr]">
-        <h2 className="font-display text-3xl font-bold text-indigo-ink sm:text-4xl">About me</h2>
-        <div className="max-w-2xl space-y-4 text-lg leading-relaxed text-indigo-ink/85">
+        <h2 data-reveal="up" className="self-start font-display text-3xl font-bold text-indigo-ink sm:text-4xl">About me</h2>
+        <div data-reveal="up" data-delay="0.1" className="max-w-2xl space-y-4 text-lg leading-relaxed text-indigo-ink/85">
           <p>
             I'm Joshua, a Computer Science student at Covenant University and a frontend developer
             based in {profile.location.split(" ·")[0]}. I enjoy taking a business's goals and turning

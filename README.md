@@ -15,3 +15,12 @@ All text, links and projects live in `src/data.js`. Colours and fonts are in `sr
 ## Structure
 - `src/components/AdirePattern.jsx` — the SVG adire pattern in the hero
 - `src/components/` — one file per page section
+
+## Motion
+Animations use [GSAP](https://gsap.com) (with ScrollTrigger and CustomEase) and [Lenis](https://lenis.darkroom.engineering) for smooth scrolling. Every effect switches off when the visitor's system has "reduce motion" turned on.
+
+- `src/lib/motion.js`: plugin setup, the four easing curves, and Lenis
+- `src/lib/useScrollReveals.js`: scroll entrances. Add `data-reveal="up" | "right" | "scale"` to any element, or `data-batch="name"` to a group of items that should fade in one after another
+- `src/components/Intro.jsx`: intro screen, once per browser session. Change the text with `introLine` in `src/data.js`
+- `src/components/WordSwap.jsx`: the rotating word in the hero. Change the words with `headlineWords` in `src/data.js`
+- `src/components/BeamBorder.jsx`: the light that travels around the Upwork button
