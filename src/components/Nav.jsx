@@ -1,5 +1,12 @@
 import { profile } from "../data";
 
+const links = [
+  { href: "#work", label: "Work", show: "sm:inline-block" },
+  { href: "#services", label: "Services", show: "sm:inline-block" },
+  { href: "#about", label: "About", show: "sm:inline-block" },
+  { href: "#experience", label: "Experience", show: "md:inline-block" },
+];
+
 export default function Nav() {
   return (
     <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
@@ -7,10 +14,11 @@ export default function Nav() {
         Joshua Adesomoju
       </a>
       <nav className="flex items-center gap-5 text-sm font-medium text-indigo-mid sm:gap-7">
-        <a href="#work" className="hidden hover:text-indigo-deep sm:inline">Work</a>
-        <a href="#services" className="hidden hover:text-indigo-deep sm:inline">Services</a>
-        <a href="#about" className="hidden hover:text-indigo-deep sm:inline">About</a>
-        <a href="#experience" className="hidden hover:text-indigo-deep md:inline">Experience</a>
+        {links.map((l) => (
+          <a key={l.href} href={l.href} className={`link-draw hidden hover:text-indigo-deep ${l.show}`}>
+            {l.label}
+          </a>
+        ))}
         <a
           href={profile.upwork}
           target="_blank"

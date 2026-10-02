@@ -72,7 +72,11 @@ export default function AdirePattern({ cols = 5, rows = 6, className = "" }) {
     for (let c = 0; c < cols; c++) {
       // Shift the motif order on each row so it looks hand-laid, not copy-pasted
       const kind = ORDER[(c + r * 2) % ORDER.length];
-      tiles.push(<Motif key={`${r}-${c}`} kind={kind} x={c * SIZE} y={r * SIZE} />);
+      tiles.push(
+        <g key={`${r}-${c}`} className="adire-tile">
+          <Motif kind={kind} x={c * SIZE} y={r * SIZE} />
+        </g>
+      );
     }
   }
 
