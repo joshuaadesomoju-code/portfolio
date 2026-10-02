@@ -7,6 +7,12 @@ export const profile = {
   name: "Joshua Adesomoju",
   role: "Frontend Web Developer",
   headline: "Websites and React apps that look right on every screen your customers use.",
+  // The hero headline is split around one word that keeps changing.
+  headlineStart: "Websites and React apps that look right on every",
+  headlineWords: ["phone", "tablet", "laptop", "screen"],
+  headlineEnd: "your customers use.",
+  // Typed out on the intro screen the first time someone visits.
+  introLine: "Design. Build. Ship.",
   intro:
     "I help small businesses, startups and personal brands get online with fast, mobile-friendly sites. Send me a design or just an idea, and I'll turn it into clean, working code.",
   location: "Lagos, Nigeria · works remotely (GMT+1)",

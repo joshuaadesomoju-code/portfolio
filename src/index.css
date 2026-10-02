@@ -13,7 +13,13 @@
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
 }
 
+/* Without JavaScript or with reduced motion, anchor links still scroll smoothly.
+   When Lenis is running it adds .lenis-smooth and takes over. */
 html { scroll-behavior: smooth; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+
 body {
   background: var(--color-wash);
   color: var(--color-indigo-ink);
@@ -24,13 +30,41 @@ body {
 /* Visible keyboard focus everywhere */
 :focus-visible { outline: 3px solid var(--color-ochre); outline-offset: 3px; border-radius: 4px; }
 
-/* The one animation: the adire pattern "dyes in" on page load */
-@keyframes dye-in {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
+/* ---------- Motion ---------- */
+/* Easing curves (same values as src/lib/motion.js) */
+:root {
+  --ease-settle: cubic-bezier(.33, 1, .68, 1);
+  --ease-glide: cubic-bezier(.22, 1, .36, 1);
 }
-.dye-in { animation: dye-in 900ms cubic-bezier(.2,.7,.2,1) both; }
+
+/* Underline that draws in from the left on hover */
+.link-draw { position: relative; }
+.link-draw::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--color-ochre);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s var(--ease-glide);
+}
+.link-draw:hover::after, .link-draw:focus-visible::after { transform: scaleX(1); }
+
+/* Copy button next to the email: hidden until you hover or tab to it.
+   On touch screens there's no hover, so it stays visible. */
+.copy-reveal { transition: opacity .2s var(--ease-glide), transform .2s var(--ease-glide), border-color .2s; }
+@media (hover: hover) {
+  .copy-reveal { opacity: 0; transform: translateX(-4px); }
+  .group:hover .copy-reveal, .group:focus-within .copy-reveal { opacity: 1; transform: none; }
+}
+
+/* Light travelling around the Upwork button (see BeamBorder.jsx) */
+.beam-dash { animation: beam-dash 3.2s linear infinite; }
+@keyframes beam-dash { to { stroke-dashoffset: -100; } }
+
 @media (prefers-reduced-motion: reduce) {
-  .dye-in { animation: none; }
   html { scroll-behavior: auto; }
+  .beam-dash { animation: none; opacity: 0; }
+  .link-draw::after, .copy-reveal { transition: none; }
 }
